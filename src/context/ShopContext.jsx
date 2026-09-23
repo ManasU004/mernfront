@@ -32,7 +32,7 @@ const ShopContextProvider = ({ children }) => {
                 const response = await fetch(`${API_URL}/api/product/list`);
                 const result = await response.json();
 
-                if (result.success && Array.isArray(result.products)) {
+                if (result.success && Array.isArray(result.products) && result.products.length > 0) {
                     setProducts(result.products);
                 }
             } catch {
